@@ -1,5 +1,16 @@
 import * as React from "react";
 
-export interface HelloProps { compiler: string; framework: string; }
+export interface IHelloProps {
+  readonly compiler: string;
+  readonly framework: string;
+}
 
-export const Hello = (props: HelloProps) => <h1>Hello from {props.compiler} and {props.framework}!</h1>;
+const prop = (name: string) => (obj: any) => obj[name];
+
+const compiler = prop("compiler");
+
+const framework = prop("framework");
+
+export const Hello = (props: IHelloProps) => (
+  <h1>Hello from {compiler(props)} and {framework(props)}!</h1>
+);
