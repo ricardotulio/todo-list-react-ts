@@ -17,8 +17,8 @@
     "webpack-cli": "^3.0.2"
   },
   "scripts": {
-    "test": "jest",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx'",
+    "test": "jest --config config/jest.config.js",
+    "lint": "tslint -c config/tslint.json 'src/**/*.tsx'",
     "start": "webpack --config webpack.config.js"
   },
   "dependencies": {
