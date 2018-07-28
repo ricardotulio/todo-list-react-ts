@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -27,4 +28,10 @@ module.exports = {
     'react': 'React',
     'react-dom': 'ReactDOM'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+    	inject: true,
+	template: './src/index.html',
+    }),
+  ],
 }
