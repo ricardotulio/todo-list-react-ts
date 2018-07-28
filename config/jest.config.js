@@ -9,10 +9,11 @@ module.exports = {
   },
   globals: {
     "ts-jest": {
-      "tsConfigFile": "tsconfig.json"
-    }
+      "tsConfigFile": "./config/tsconfig.json"
+    },
   },
   testMatch: [
-    "**/test/*.test.+(ts|tsx|js)"
+    "**/test/**/*.+(ts|tsx|js)"
   ],
+  rootDir: "../",
 }
