@@ -9,10 +9,10 @@
     "moduleResolution": "node"
   },
   "include": [
-    "../src/",
-    "../test/",
+    "src/",
+    "test/",
   ],
   "exclude": [
-    "../node_modules/"
+    "node_modules/"
   ]
 }
