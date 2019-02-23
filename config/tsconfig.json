@@ -6,13 +6,7 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node"
-  },
-  "include": [
-    "src/",
-    "test/",
-  ],
-  "exclude": [
-    "node_modules/"
-  ]
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  }
 }
