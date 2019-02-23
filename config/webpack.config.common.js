@@ -15,19 +15,19 @@ module.exports = {
         use: 'awesome-typescript-loader?configFileName=config/tsconfig.json',
       },
       {
-  	enforce: 'pre',
-	test: /\.js$/,
-	loader: 'source-map-loader'
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
       },
     ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
     new HtmlWebpackPlugin({
-    	inject: true,
-	template: './src/index.html',
+      inject: true,
+      template: './src/index.html',
     }),
   ],
 }
