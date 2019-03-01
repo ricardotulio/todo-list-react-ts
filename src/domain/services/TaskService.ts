@@ -1,7 +1,4 @@
-import { 
-  assoc,
-  prop,
-} from 'ramda'
+import { prop } from 'ramda'
 import { v1 as uuidv1 } from 'uuid'
 import {
   TaskStatus,
@@ -19,18 +16,22 @@ interface TaskServiceInterface {
   cancelTask(task: Task): Task
 }
 
-const createTask = (taskProps: TaskProps): Task => ({
+const createTask = (taskProps: TaskProps): Task => Object.freeze({
   id: uuidv1(),
   title: prop('title', taskProps),
   description: prop('description', taskProps),
   status: TaskStatus.Open,
 })
 
-const updateTaskStatus = assoc('status')
+const completeTask = (task: Task): Task => Object.freeze({
+  ...task,
+  status: TaskStatus.Done,
+})
 
-const completeTask = (task: Task): Task => updateTaskStatus(TaskStatus.Done, task)
-
-const cancelTask = (task: Task): Task => updateTaskStatus(TaskStatus.Cancelled, task)
+const cancelTask = (task: Task): Task => Object.freeze({
+  ...task,
+  status: TaskStatus.Cancelled,
+})
 
 const createTaskService = (): TaskServiceInterface => ({
   createTask,
