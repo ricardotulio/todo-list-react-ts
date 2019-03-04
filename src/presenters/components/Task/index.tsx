@@ -1,5 +1,5 @@
-import * as React from "react";
-import TaskStatus from "../TaskStatus"
+import * as React from 'react';
+import TaskStatus from '../TaskStatus'
 
 class Props {
   readonly id: string
