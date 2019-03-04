@@ -1,1 +1,1 @@
-export const CLICK_SAVE_TASK = 'CLICK_SAVE_TASK'
+export const PERSIST_TASK = 'PERSIST_TASK'

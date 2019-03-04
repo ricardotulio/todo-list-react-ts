@@ -1,6 +1,6 @@
-import { CLICK_SAVE_TASK } from './actionTypes'
+import { PERSIST_TASK } from './actionTypes'
 
-export const clickSaveTaskButton = (value: any) => ({
-  type: CLICK_SAVE_TASK,
+export const persistTask = (value: any) => ({
+  type: PERSIST_TASK,
   newValue: value,
 })
