@@ -1,3 +1,5 @@
+import { append } from 'ramda'
+
 const initialState = {
   newTask: {
     id: '',
@@ -5,20 +7,16 @@ const initialState = {
     description: '',
     status: '',
   },
-  taskList: [
-    {
-      id: '1',
-      title: 'teste',
-      description: 'teste',
-      status: 'open',
-    }
-  ],
+  taskList: [],
 }
 
 export const taskReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case 'PERSIST_TASK':
-      return state
+    case 'PERSIST_TASK': 
+      return {
+        ...state,
+        taskList: append(action.newTask, state.taskList),
+      }
     default:
       return state
   }
