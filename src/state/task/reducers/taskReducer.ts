@@ -1,4 +1,5 @@
 import { append } from 'ramda'
+import  * as types from '../actions/actionTypes'
 
 const initialState = {
   newTask: {
@@ -12,7 +13,7 @@ const initialState = {
 
 export const taskReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case 'PERSIST_TASK': 
+    case types.PERSIST_TASK_SUCCESS: 
       return {
         ...state,
         taskList: append(action.newTask, state.taskList),
