@@ -13,6 +13,7 @@ class TaskForm extends React.Component {
 
     this.clearForm = this.clearForm.bind(this)
     this.inputChange = this.inputChange.bind(this)
+    this.persist = this.persist.bind(this)
   }
 
   clearForm() {
@@ -38,6 +39,13 @@ class TaskForm extends React.Component {
     }))
   }
 
+  persist() {
+    const { persistTask } = this.props
+
+    persistTask(this.state.newTask)
+    this.clearForm()
+  }
+
   render() {
     const { persistTask } = this.props
 
@@ -45,7 +53,7 @@ class TaskForm extends React.Component {
       <TaskFormComponent
         formData={this.state.newTask}
         onChange={this.inputChange}
-        submitForm={() => persistTask(this.state.newTask)}
+        submitForm={this.persist}
       />
     )
   }
