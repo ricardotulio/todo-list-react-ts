@@ -1,13 +1,8 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
 import { TaskList as TaskListComponent } from '../components'
 
-class Props {}
-
-class State {}
-
-class TaskList extends React.Component<Props, State> {
-  constructor(props: Props) {
+class TaskList extends React.Component {
+  constructor(props) {
     super(props)
 
     this.state = {
