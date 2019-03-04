@@ -1,5 +1,3 @@
-import { Task, TaskList }from '../../domain/entities'
-
 const initialState = {
   newTask: {
     id: '',
