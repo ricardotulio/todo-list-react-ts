@@ -6,9 +6,9 @@ export default class TaskForm extends React.Component {
     super(props)
 
     this.state = {
-      id: 'id',
-      title: 'title',
-      description: 'description',
+      id: '',
+      title: '',
+      description: '',
     }
   }
 
