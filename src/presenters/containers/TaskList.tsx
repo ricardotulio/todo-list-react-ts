@@ -1,27 +1,19 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import { TaskList as TaskListComponent } from '../components'
 
 class TaskList extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      taskList: [
-        {
-          id: '1',
-          title: 'task',
-          description: 'task',
-          status: 'open',
-        }
-      ]
-    }
-  }
-
   render() {
+    const { taskList } = this.props
+
     return (
-      <TaskListComponent taskList={this.state.taskList} />
+      <TaskListComponent taskList={taskList} />
     )
   }
 }
 
-export default TaskList
+const mapStateToProps = store => ({
+  taskList: store.taskState.taskList,
+})
+
+export default connect(mapStateToProps)(TaskList)
