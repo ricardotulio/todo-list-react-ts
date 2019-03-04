@@ -1,12 +1,8 @@
 import * as React from 'react'
 import { TaskForm as TaskFormComponent } from '../components'
 
-class Props {}
-
 export default class TaskForm extends React.Component {
-  createTaskController: any
-
-  constructor(props: Props) {
+  constructor(props) {
     super(props)
 
     this.state = {
