@@ -1,9 +1,10 @@
-import * as React from 'react'
-import { map } from 'ramda'
-import Task from '../Task'
+import { map } from "ramda"
+import * as React from "react"
+import Task from "../Task"
 
 const renderTask = (task) => (
-  <Task id={task.id}
+  <Task
+    id={task.id}
     title={task.title}
     description={task.description}
     status={task.status}

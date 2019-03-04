@@ -1,4 +1,4 @@
 export {
-  TaskServiceInterface,
+  ITaskService,
   TaskServiceFactory,
-} from './TaskService'
+} from "./TaskService"

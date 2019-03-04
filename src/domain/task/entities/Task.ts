@@ -1,14 +1,14 @@
 enum TaskStatus {
-  Open = 'open',
-  Cancelled = 'cancelled',
-  Done = 'done',
+  Open = "open",
+  Cancelled = "cancelled",
+  Done = "done",
 }
 
 class Task {
-  readonly id: string
-  readonly title: string
-  readonly description: string
-  readonly status: TaskStatus
+  public readonly id: string
+  public readonly title: string
+  public readonly description: string
+  public readonly status: TaskStatus
 }
 
 export {

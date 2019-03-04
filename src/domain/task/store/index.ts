@@ -1,11 +1,11 @@
-import { Task } from "../entities";
+import { Task } from "../entities"
 
-interface TaskStoreInterface {
+interface ITaskStore {
   findTask(id: string): Task|null
   persistTask(task: Task): Task
   removeTask(task: Task): boolean
 }
 
 export {
-  TaskStoreInterface,
+  ITaskStore,
 }

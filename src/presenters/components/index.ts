@@ -1,8 +1,8 @@
-import Task from './Task'
-import TaskStatus from './TaskStatus'
-import TaskForm from './TaskForm'
-import TaskFormData from './TaskForm'
-import TaskList from './TaskList'
+import Task from "./Task"
+import TaskForm from "./TaskForm"
+import TaskFormData from "./TaskForm"
+import TaskList from "./TaskList"
+import TaskStatus from "./TaskStatus"
 
 export {
   Task,

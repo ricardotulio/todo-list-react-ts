@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test": "jest --config config/jest.config.js",
-    "lint": "tslint -c config/tslint.json 'src/**/*.tsx'",
+    "lint": "tslint -c config/tslint.json --fix 'src/**/*.ts?(x)'",
     "start": "webpack-dev-server --open --config config/webpack.config.dev.js",
     "build": "webpack --optmize-minimize --config config/webpack.config.prod.js"
   },

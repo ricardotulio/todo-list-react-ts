@@ -1,6 +1,6 @@
-import * as React from 'react'
-import TaskForm from './TaskForm'
-import TaskList from './TaskList'
+import * as React from "react"
+import TaskForm from "./TaskForm"
+import TaskList from "./TaskList"
 
 const App = () => (
   <div>

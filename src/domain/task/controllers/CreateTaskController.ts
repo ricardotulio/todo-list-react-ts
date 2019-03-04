@@ -1,17 +1,17 @@
-import { curry } from 'ramda'
-import { Task } from '../entities';
-import { TaskStoreInterface } from '../store'
-import { TaskServiceInterface, TaskServiceFactory } from '../services'
+import { curry } from "ramda"
+import { Task } from "../entities"
+import { ITaskService, TaskServiceFactory } from "../services"
+import { ITaskStore } from "../store"
 
-class CreateTaskRequest {
+interface ICreateTaskRequest {
   readonly title: string
   readonly description: string
 }
 
 const dispatch = curry((
-  taskService: TaskServiceInterface, 
-  taskStore: TaskStoreInterface,
-  createTaskRequest: CreateTaskRequest): Promise<Task> => {
+  taskService: ITaskService,
+  taskStore: ITaskStore,
+  createTaskRequest: ICreateTaskRequest): Promise<Task> => {
 
   return Promise.resolve(createTaskRequest)
     .then(taskService.createTask)

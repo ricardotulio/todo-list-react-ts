@@ -1,18 +1,16 @@
-import * as React from 'react'
-import { connect } from 'react-redux'
-import { TaskList as TaskListComponent } from '../components'
+import * as React from "react"
+import { connect } from "react-redux"
+import { TaskList as TaskListComponent } from "../components"
 
-class TaskList extends React.Component {
-  render() {
-    const { taskList } = this.props
+const TaskList = (props) => {
+  const { taskList } = props
 
-    return (
-      <TaskListComponent taskList={taskList} />
-    )
-  }
+  return (
+    <TaskListComponent taskList={taskList} />
+  )
 }
 
-const mapStateToProps = store => ({
+const mapStateToProps = (store) => ({
   taskList: store.taskState.taskList,
 })
 

@@ -1,4 +1,4 @@
-import CreateTaskController from "./CreateTaskController";
+import CreateTaskController from "./CreateTaskController"
 
 export {
   CreateTaskController,

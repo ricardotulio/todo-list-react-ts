@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from "react"
 
-class TaskStatusProps {
+interface IProps {
   readonly status: string
 }
 
-const TaskStatus = (props: TaskStatusProps) => (
+const TaskStatus = (props: IProps) => (
   <div>{props.status}</div>
 )
 

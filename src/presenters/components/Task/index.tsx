@@ -1,18 +1,18 @@
-import * as React from 'react';
-import TaskStatus from '../TaskStatus'
+import * as React from "react"
+import TaskStatus from "../TaskStatus"
 
-class Props {
+interface IProps {
   readonly id: string
   readonly title: string
   readonly description: string
   readonly status: string
 }
 
-const Task = (props: Props) => (
+const Task = (props: IProps) => (
   <div>
     <div>{props.title}</div>
     <div>{props.description}</div>
-    <div><TaskStatus status={props.status}></TaskStatus></div>
+    <div><TaskStatus status={props.status} /></div>
   </div>
 )
 
