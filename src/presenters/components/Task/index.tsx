@@ -1,14 +1,14 @@
 import * as React from "react"
 import TaskStatus from "../TaskStatus"
 
-interface IProps {
+type Props = {
   readonly id: string
   readonly title: string
   readonly description: string
   readonly status: string
 }
 
-const Task = (props: IProps) => (
+const Task = (props: Props) => (
   <div>
     <div>{props.title}</div>
     <div>{props.description}</div>

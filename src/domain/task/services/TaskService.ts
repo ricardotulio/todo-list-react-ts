@@ -5,18 +5,18 @@ import {
   TaskStatus,
 } from "../entities"
 
-interface ITaskProps {
+type TaskProps = {
   readonly description: string
   readonly title: string
 }
 
 interface ITaskService {
-  createTask(taskProps: ITaskProps): Task
+  createTask(taskProps: TaskProps): Task
   completeTask(task: Task): Task
   cancelTask(task: Task): Task
 }
 
-const createTask = (taskProps: ITaskProps): Task => Object.freeze({
+const createTask = (taskProps: TaskProps): Task => Object.freeze({
   description: prop("description", taskProps),
   id: uuidv1(),
   title: prop("title", taskProps),

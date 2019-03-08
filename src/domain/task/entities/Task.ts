@@ -4,11 +4,11 @@ enum TaskStatus {
   Done = "done",
 }
 
-class Task {
-  public readonly id: string
-  public readonly title: string
-  public readonly description: string
-  public readonly status: TaskStatus
+type Task = {
+  readonly id: string
+  readonly title: string
+  readonly description: string
+  readonly status: TaskStatus
 }
 
 export {

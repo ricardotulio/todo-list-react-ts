@@ -1,13 +1,13 @@
 import * as React from "react"
 
-interface IFormData {
+type FormData = {
   readonly id: string
   readonly title: string
   readonly description: string
 }
 
-interface IProps {
-  readonly formData: IFormData
+type Props = {
+  readonly formData: FormData
   readonly submitForm: () => any
 }
 
@@ -15,7 +15,7 @@ const dispatch = (submitHandler) => (event: React.FormEvent) => {
   return submitHandler(event)
 }
 
-const TaskForm = (props: IProps) => (
+const TaskForm = (props: Props) => (
   <div>
     <form>
       <input type="hidden" name="id" value={props.formData.id} />

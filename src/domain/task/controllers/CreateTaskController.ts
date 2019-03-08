@@ -3,7 +3,7 @@ import { Task } from "../entities"
 import { ITaskService, TaskServiceFactory } from "../services"
 import { ITaskStore } from "../store"
 
-interface ICreateTaskRequest {
+type CreateTaskRequest = {
   readonly title: string
   readonly description: string
 }
@@ -11,7 +11,7 @@ interface ICreateTaskRequest {
 const dispatch = curry((
   taskService: ITaskService,
   taskStore: ITaskStore,
-  createTaskRequest: ICreateTaskRequest): Promise<Task> => {
+  createTaskRequest: CreateTaskRequest): Promise<Task> => {
 
   return Promise.resolve(createTaskRequest)
     .then(taskService.createTask)

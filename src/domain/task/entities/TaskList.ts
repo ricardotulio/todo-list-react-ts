@@ -1,10 +1,10 @@
 import { Task } from "./Task"
 
-class TaskList {
-  public readonly id: string
-  public readonly title: string
-  public readonly description: string
-  public readonly tasks: ReadonlyArray<Task>
+type TaskList = {
+  readonly id: string
+  readonly title: string
+  readonly description: string
+  readonly tasks: ReadonlyArray<Task>
 }
 
 export {
