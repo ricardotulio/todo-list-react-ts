@@ -1,4 +1,8 @@
 import * as React from "react"
+import {
+  applySpec,
+  path,
+} from "ramda"
 
 type FormData = {
   readonly id: string
@@ -8,26 +12,36 @@ type FormData = {
 
 type Props = {
   readonly formData: FormData
-  readonly submitForm: () => any
+  readonly handleSubmit: (event) => any
 }
 
-const dispatch = (submitHandler) => (event: React.FormEvent) => {
-  return submitHandler(event)
+const dispatch = handleSubmit => event => {
+  const form = path(['target', 'form', 'children'], event)
+
+  const buildTaskFromForm = applySpec({
+    id: path(['id', 'value']),
+    title: path(['title', 'value']),
+    description: path(['description', 'value']),
+  })
+
+  const task = buildTaskFromForm(form)
+  
+  handleSubmit(task)
 }
 
 const TaskForm = (props: Props) => {
   const {
     formData,
-    submitForm
+    handleSubmit,
   } = props
 
   return (
     <div>
       <form>
-        <input type="hidden" name="id" value={formData.id} />
-        <input type="text" name="title" value={formData.title} />
-        <textarea name="description" value={formData.description} />
-        <button type="button" onClick={dispatch(submitForm)}>Save</button>
+        <input type="hidden" name="id" defaultValue={formData.id} />
+        <input type="text" name="title" defaultValue={formData.title} />
+        <textarea name="description" defaultValue={formData.description} />
+        <button type="button" onClick={dispatch(handleSubmit)}>Save</button>
       </form>
     </div>
   )

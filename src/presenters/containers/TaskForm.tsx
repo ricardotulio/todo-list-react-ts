@@ -7,13 +7,13 @@ import { TaskForm as TaskFormComponent } from "../components"
 const TaskForm = (props) => {
   const {
     newTask,
-    persistTask,
+    handleSubmit,
   } = props
 
   return (
     <TaskFormComponent
       formData={newTask}
-      submitForm={persistTask}
+      handleSubmit={handleSubmit}
     />
   )
 }
@@ -23,6 +23,6 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ persistTask }, dispatch)
+  bindActionCreators({ handleSubmit: persistTask(dispatch) }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm)
