@@ -3,7 +3,7 @@ import * as types from "./actionTypes"
 
 const createTaskController = CreateTaskControllerProvider()
 
-export const persistTask = dispatch => newTask => {
+export const persistTask = newTask => dispatch => {
   dispatch(persistTaskInProgress)
 
   createTaskController.dispatch(newTask)

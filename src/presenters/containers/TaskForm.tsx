@@ -44,6 +44,6 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ persistTask: persistTask(dispatch) }, dispatch)
+  bindActionCreators({ persistTask }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm)
