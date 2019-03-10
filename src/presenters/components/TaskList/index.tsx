@@ -3,7 +3,7 @@ import * as React from "react"
 import Task from "../Task"
 
 const renderTask = (task) => (
-  <Task
+  <Task key={task.id}
     id={task.id}
     title={task.title}
     description={task.description}
