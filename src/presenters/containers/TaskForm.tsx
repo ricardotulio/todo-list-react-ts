@@ -9,22 +9,6 @@ import {
 import { persistTask } from "../../state/task/actions"
 import { TaskForm as TaskFormComponent } from "../components"
 
-const handleSubmit = submitFunction => event => {  
-  event.preventDefault()
-
-  const form = prop('target', event)
-
-  const buildTaskFromForm = applySpec({
-    id: path(['id', 'value']),
-    title: path(['title', 'value']),
-    description: path(['description', 'value']),
-  })
-
-  const task = buildTaskFromForm(form)
-  
-  submitFunction(task)
-}
-
 const TaskForm = (props) => {
   const {
     newTask,
@@ -33,8 +17,8 @@ const TaskForm = (props) => {
 
   return (
     <TaskFormComponent
-      formData={newTask}
-      onSubmit={handleSubmit(persistTask)}
+      initialState={newTask}
+      onSubmit={persistTask}
     />
   )
 }
