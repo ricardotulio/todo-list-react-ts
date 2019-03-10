@@ -4,8 +4,8 @@ import * as types from "../actions/actionTypes"
 const initialState = {
   newTask: {
     id: "",
-    title: "teste",
-    description: "teste",
+    title: "",
+    description: "",
     status: "",
   },
   taskList: [],
