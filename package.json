@@ -16,7 +16,7 @@
     "tslint-immutable": "^4.5.4",
     "tslint-react": "^3.6.0",
     "typed-css-modules": "^0.4.2",
-    "typed-css-modules-loader": "^0.0.17",
+    "typed-css-modules-webpack-plugin": "^0.1.0",
     "typescript": "^2.9.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.11.1",

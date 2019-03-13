@@ -1,6 +1,7 @@
 const webpack = require("webpack")
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { TypedCssModulesPlugin } = require('typed-css-modules-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -31,7 +32,6 @@ module.exports = {
               localIdentName: '[local]__[hash:base64:5]',
             },
           },
-          'typed-css-modules-loader',
         ],
       },
     ],
@@ -40,6 +40,9 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
+    new TypedCssModulesPlugin({
+      globPattern: './src/presenters/components/**/*.css',
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: './src/index.html',
