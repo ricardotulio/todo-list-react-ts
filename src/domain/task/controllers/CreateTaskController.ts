@@ -11,7 +11,7 @@ type CreateTaskRequest = {
 const dispatch = curry((
   taskService: ITaskService,
   taskStore: ITaskStore,
-  createTaskRequest: CreateTaskRequest): Promise<Task> => {
+  createTaskRequest: CreateTaskRequest): any => {
 
   return Promise.resolve(createTaskRequest)
     .then(taskService.createTask)
