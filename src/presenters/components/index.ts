@@ -1,12 +1,15 @@
+import Input from "./Input"
+import TextArea from "./TextArea"
+import Button from "./Button"
 import Task from "./Task"
-import TaskForm from "./TaskForm"
-import TaskFormData from "./TaskForm"
 import TaskList from "./TaskList"
 import TaskStatus from "./TaskStatus"
 
 export {
+  Input,
+  TextArea,
+  Button,
   Task,
   TaskStatus,
-  TaskForm,
   TaskList,
 }
