@@ -1,9 +1,9 @@
 import App from "./App"
 import TaskFormContainer from "./TaskFormContainer"
-import TaskList from "./TaskList"
+import TaskListContainer from "./TaskListContainer"
 
 export {
-  TaskList,
+  TaskListContainer,
   TaskFormContainer,
   App,
 }

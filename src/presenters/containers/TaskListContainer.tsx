@@ -1,12 +1,12 @@
 import * as React from "react"
 import { connect } from "react-redux"
-import { TaskList as TaskListComponent } from "../components"
+import { TaskList } from "../components"
 
-const TaskList = (props) => {
+const TaskListContainer = (props) => {
   const { taskList } = props
 
   return (
-    <TaskListComponent taskList={taskList} />
+    <TaskList taskList={taskList} />
   )
 }
 
@@ -14,4 +14,4 @@ const mapStateToProps = (store) => ({
   taskList: store.taskState.taskList,
 })
 
-export default connect(mapStateToProps)(TaskList)
+export default connect(mapStateToProps)(TaskListContainer)

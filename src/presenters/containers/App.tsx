@@ -1,10 +1,10 @@
 import * as React from "react"
 import TaskFormContainer from "./TaskFormContainer"
-import TaskList from "./TaskList"
+import TaskListContainer from "./TaskListContainer"
 
 const App = () => (
   <div>
-    <TaskList />
+    <TaskListContainer />
     <TaskFormContainer />
   </div>
 )
