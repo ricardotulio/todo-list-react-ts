@@ -1,9 +1,9 @@
 import { CreateTaskController } from "../../domain/task/controllers"
 import { TaskServiceFactory } from "../../domain/task/services"
-import taskStore from "../services/TaskStore"
+import InMemoryTaskRepository from "../repositories/InMemoryTaskRepository"
 
 const CreateTaskControllerProvider = () => ({
-  dispatch: CreateTaskController.dispatch(TaskServiceFactory.createTaskService(), taskStore),
+  dispatch: CreateTaskController.dispatch(TaskServiceFactory.createTaskService(), InMemoryTaskRepository),
 })
 
 export default CreateTaskControllerProvider

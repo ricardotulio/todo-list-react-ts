@@ -1,7 +1,7 @@
 import { curry } from "ramda"
 import { Task } from "../entities"
 import { ITaskService, TaskServiceFactory } from "../services"
-import { ITaskStore } from "../store"
+import { ITaskRepository } from "../repositories"
 
 type CreateTaskRequest = {
   readonly title: string
@@ -10,7 +10,7 @@ type CreateTaskRequest = {
 
 const dispatch = curry((
   taskService: ITaskService,
-  taskStore: ITaskStore,
+  taskStore: ITaskRepository,
   createTaskRequest: CreateTaskRequest): any => {
 
   return Promise.resolve(createTaskRequest)
