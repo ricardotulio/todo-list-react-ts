@@ -1,4 +1,4 @@
-import { CreateTaskControllerProvider } from "../../../providers"
+import { CreateTaskControllerProvider } from "../../../../providers"
 import * as types from "./actionTypes"
 
 const createTaskController = CreateTaskControllerProvider()

@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import { Provider } from "react-redux"
-import { store } from "./state/task/store"
+import { store } from "./infraestructure/state/task/store"
 
 import { App } from "./infraestructure/presenters/containers"
 
