@@ -45,7 +45,7 @@ class TaskFormContainer extends React.Component<Props, State> {
     const { persistTask } = this.props
 
     Promise.resolve(persistTask(task))
-      .then(this.handleClearForm)
+      .then(() => this.handleClearForm())
   }
 
   handleClearForm() {
