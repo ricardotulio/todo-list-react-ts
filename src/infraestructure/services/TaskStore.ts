@@ -1,5 +1,5 @@
-import { Task } from "../domain/task/entities"
-import { ITaskStore } from "../domain/task/store"
+import { Task } from "../../domain/task/entities"
+import { ITaskStore } from "../../domain/task/store"
 
 const findTask = (id: string): Task => {
   throw new Error("Method not implemented.")
