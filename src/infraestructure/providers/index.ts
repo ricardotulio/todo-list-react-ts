@@ -1,5 +1,5 @@
-import CreateTaskControllerProvider from "./CreateTaskControllerProvider"
+import createTaskProvider from "./createTaskProvider"
 
 export {
-  CreateTaskControllerProvider,
+  createTaskProvider,
 }

@@ -1,14 +1,14 @@
 import { curry } from "ramda"
-import { Task } from "../entities"
-import { ITaskService, TaskServiceFactory } from "../services"
-import { ITaskRepository } from "../repositories"
+import { Task } from "../../domain/task/entities"
+import { ITaskService, TaskServiceFactory } from "../../domain/task/services"
+import { ITaskRepository } from "../../domain/task/repositories"
 
 type CreateTaskRequest = {
   readonly title: string
   readonly description: string
 }
 
-const dispatch = curry((
+const createTask = curry((
   taskService: ITaskService,
   taskStore: ITaskRepository,
   createTaskRequest: CreateTaskRequest): any => {
@@ -18,6 +18,4 @@ const dispatch = curry((
     .then(taskStore.persistTask)
 })
 
-export default {
-  dispatch,
-}
+export default createTask

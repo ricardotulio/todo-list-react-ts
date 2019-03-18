@@ -1,12 +1,12 @@
-import { CreateTaskControllerProvider } from "../../../providers"
+import { createTaskProvider } from "../../../providers"
 import * as types from "./actionTypes"
 
-const createTaskController = CreateTaskControllerProvider()
+const createTask = createTaskProvider()
 
 export const persistTask = newTask => dispatch => {
   dispatch(persistTaskInProgress)
 
-  createTaskController.dispatch(newTask)
+  createTask(newTask)
     .then((newTask) => dispatch(persistTaskSuccess(newTask)))
     .catch((error) => dispatch(persistTaskError(error)))
 }
