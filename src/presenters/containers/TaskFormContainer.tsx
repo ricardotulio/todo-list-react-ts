@@ -65,25 +65,25 @@ class TaskFormContainer extends React.Component<Props, State> {
     return (
       <form onSubmit={(event) => this.handleFormSubmit(event)}>
         <Input
-        title={"Title"}
-        inputType={"text"}
-        name={"title"}
-        value={task.title}
-        handleChange={(event) => this.handleInputChange(event)}
-        placeholder={"Type task title..."}
-      />
+          title={"Title"}
+          inputType={"text"}
+          name={"title"}
+          value={task.title}
+          handleChange={(event) => this.handleInputChange(event)}
+          placeholder={"Type task title..."}
+        />
 
-      <TextArea
-        title={"Description"}
-        name={"description"}
-        rows={5}
-        value={task.description}
-        handleChange={(event) => this.handleInputChange(event)}
-        placeholder={"Type task description..."}
-      />
+        <TextArea
+          title={"Description"}
+          name={"description"}
+          rows={5}
+          value={task.description}
+          handleChange={(event) => this.handleInputChange(event)}
+          placeholder={"Type task description..."}
+        />
 
-      <Button title={"Save"} />
-    </form>
+        <Button title={"Save"} />
+      </form>
     )
   }
 }
