@@ -2,8 +2,8 @@ import * as React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import { assoc } from "ramda"
-import { Task } from "../../domain/task/entities"
-import { persistTask } from "../../state/task/actions"
+import { Task } from "../../../domain/task/entities"
+import { persistTask } from "../../../state/task/actions"
 import {
   Input,
   TextArea,
