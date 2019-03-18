@@ -26,15 +26,9 @@ class TaskFormContainer extends React.Component<Props, State> {
     this.state = {
       task: props.task,
     }
-
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
-    this.handleClearForm = this.handleClearForm.bind(this)
   }
 
   handleInputChange(event) {
-    event.persist()
-
     const name = event.target.name
     const value = event.target.value
 
@@ -69,13 +63,13 @@ class TaskFormContainer extends React.Component<Props, State> {
     const { task } = this.state
   
     return (
-      <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={(event) => this.handleFormSubmit(event)}>
         <Input
         title={"Title"}
         inputType={"text"}
         name={"title"}
         value={task.title}
-        handleChange={this.handleInputChange}
+        handleChange={(event) => this.handleInputChange(event)}
         placeholder={"Type task title..."}
       />
 
@@ -84,7 +78,7 @@ class TaskFormContainer extends React.Component<Props, State> {
         name={"description"}
         rows={5}
         value={task.description}
-        handleChange={this.handleInputChange}
+        handleChange={(event) => this.handleInputChange(event)}
         placeholder={"Type task description..."}
       />
 
