@@ -8,7 +8,7 @@ import {
   Input,
   TextArea,
   Button,
-} from '../components'
+} from '../components/Shared/Form'
 
 type Props = {
   readonly task: Task
