@@ -2,7 +2,7 @@ import * as React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import { assoc } from "ramda"
-import { Task } from "../../domain/task/entities"
+import { Task } from "../../../domain/task/entities"
 import { persistTask } from "../../state/task/actions"
 import {
   Input,
@@ -45,7 +45,7 @@ class TaskFormContainer extends React.Component<Props, State> {
     const { persistTask } = this.props
 
     Promise.resolve(persistTask(task))
-      .then(this.handleClearForm)
+      .then(() => this.handleClearForm())
   }
 
   handleClearForm() {

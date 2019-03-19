@@ -1,16 +1,16 @@
 import { curry } from "ramda"
-import { Task } from "../entities"
-import { ITaskService, TaskServiceFactory } from "../services"
-import { ITaskStore } from "../store"
+import { Task } from "../../domain/task/entities"
+import { ITaskService, TaskServiceFactory } from "../../domain/task/services"
+import { ITaskRepository } from "../../domain/task/repositories"
 
 type CreateTaskRequest = {
   readonly title: string
   readonly description: string
 }
 
-const dispatch = curry((
+const createTask = curry((
   taskService: ITaskService,
-  taskStore: ITaskStore,
+  taskStore: ITaskRepository,
   createTaskRequest: CreateTaskRequest): any => {
 
   return Promise.resolve(createTaskRequest)
@@ -18,6 +18,4 @@ const dispatch = curry((
     .then(taskStore.persistTask)
 })
 
-export default {
-  dispatch,
-}
+export default createTask
