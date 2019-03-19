@@ -36,6 +36,7 @@
     "build": "webpack --config config/webpack.config.prod.js"
   },
   "dependencies": {
+    "materialize-css": "^1.0.0",
     "ramda": "^0.26.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
